@@ -1,9 +1,11 @@
+package huffmanEncoding;
 
 public class Node {
 	int numVal;
 	char letterVal;
 	Node leftChild;
 	Node rightChild;
+	boolean checked;
 	
 	public Node(int num, char letter)
 	{
@@ -11,6 +13,17 @@ public class Node {
 		letterVal = letter;
 		leftChild = null;
 		rightChild = null;
+		checked = false;
+	}
+	
+	public Node(int num)
+	{
+		numVal = num;
+		letterVal = '#';
+		leftChild = null;
+		rightChild = null;
+		checked = false;
+		
 	}
 	
 	//Method to connect two pre-existing children to a Node
