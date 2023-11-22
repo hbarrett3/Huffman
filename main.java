@@ -18,7 +18,7 @@ public class main {
     	// Set up a scanner and get a string size 
     	Scanner keyInput = new Scanner(System.in);
    		System.out.println("--------------------------------------------------\n");
-    	System.out.println("Please enter an integer that will correspond to the size of the randomized String "
+    	System.out.println("Please enter an integer greater than 1 that will correspond to the size of the randomized String "
     			+ "to perform Huffman encoding on, then press 'Enter'.");
    		System.out.println("\n--------------------------------------------------");
     	String userInput = keyInput.nextLine();
@@ -26,6 +26,10 @@ public class main {
     	try {
     		// get the integer value of the input string
     		stringSize = Integer.valueOf(userInput);
+            if (stringSize < 2) {
+                main(args);
+                return;
+            }    
     		
     		// generate a random string with the input length
             String test1 = generateRandomString(stringSize);
